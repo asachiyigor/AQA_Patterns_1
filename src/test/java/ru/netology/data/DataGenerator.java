@@ -21,21 +21,9 @@ public class DataGenerator {
         while ((line = br.readLine()) != null) {
             arrayList.add(line);
         }
-        ArrayList<String> list = new ArrayList<String>();
-        String fakerCity = faker.address().city();
-        for (String res : arrayList) {
-            if (res.contains(fakerCity)) {
-                list.add(res);
-            }
-        }
         int size = arrayList.size();
         int randomCityNum = new Random().nextInt(size);
-
-        if (list.isEmpty()) {
-            return String.valueOf(arrayList.get(randomCityNum));
-        } else {
-            return fakerCity;
-        }
+        return String.valueOf(arrayList.get(randomCityNum));
     }
 
     public static String generateName() {
